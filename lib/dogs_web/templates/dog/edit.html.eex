@@ -1,0 +1,38 @@
+<div>
+  <div class="text-center">
+    <h1><%= @dog.name %></h1>
+  </div>
+  <form>
+    <div>
+      <div class="form-group">
+        <label for="countryField">Country of Origin</label>
+        <input type="text" class="form-control" id="countryField" placeholder="<%= @dog.country_of_origin %>" />
+      </div>
+      <div class="form-group">
+        <label for="yearField">Year of Origin</label>
+        <input type="text" class="form-control" id="yearField" placeholder="<%= @dog.year_of_origin %>" />
+      </div>
+      <div class="form-group">
+        <label for="coatField">Coat</label>
+        <input type="text" class="form-control" id="coatField" placeholder="<%= @dog.coat %>" />
+      </div>
+      <div class="form-group">
+        <label for="colorField">Color</label>
+        <input type="text" class="form-control" id="colorField" placeholder="<%= @dog.color %>" />
+      </div>
+      <div class="form-group">
+        <label for="heightField">Height (in)</label>
+        <input type="text" class="form-control" id="heightField" placeholder="<%= @dog.height_in %>" />
+      </div>
+      <div class="form-group">
+        <label for="weightField">Weight (lbs)</label>
+        <input type="text" class="form-control" id="weightField" placeholder="<%= @dog.weight_lbs %>" />
+      </div>
+      <div class="form-group">
+        <label for="lifeExpField">Life Expectancy (years)</label>
+        <input type="text" class="form-control" id="lifeExpField" placeholder="<%= @dog.life_exp %>" />
+      </div>
+    <div>
+    <button type="submit" class="btn btn-default">Save</button>
+  </form>
+</div>

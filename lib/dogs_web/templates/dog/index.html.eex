@@ -1,0 +1,13 @@
+<div>
+  <h1>All of the Dogs</h1>
+
+  <div class="container">
+    <%= for dog <- @dogs do %>
+      <div class="col-sm-4">
+        <a href="<%= dog_path(@conn, :show, dog.id) %>">
+          <img class="img-responsive img-thumbnail" src="<%= dog.photo %>" />
+        </a>
+      </div>
+    <% end %>
+  </div>
+</div>
