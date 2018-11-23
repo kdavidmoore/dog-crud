@@ -17,4 +17,57 @@ defmodule Dogs do
   def get_dog(id) do
     Repo.get(Dog, id)
   end
+
+  @doc """
+  Creates a Dog.
+
+  ## Examples
+
+      iex> create_dog(dog)
+      {:ok, %Dog{}}
+
+      iex> create_dog(dog)
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def create_dog(attrs \\ %{}) do
+    result = %Dog{}
+    |> Dog.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
+  Updates a Dog.
+
+  ## Examples
+
+      iex> update_dog(dog)
+      {:ok, %Dog{}}
+
+      iex> update_dog(dog)
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def update_dog(%Dog{} = dog, attrs) do
+    dog
+    |> Dog.changeset(attrs)
+    |> Repo.update()
+  end
+
+  @doc """
+  Deletes a Dog.
+
+  ## Examples
+
+      iex> delete_dog(dog)
+      {:ok, %Dog{}}
+
+      iex> delete_dog(dog)
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def delete_dog(%Dog{} = dog) do
+    Repo.delete(dog)
+  end
+
 end
