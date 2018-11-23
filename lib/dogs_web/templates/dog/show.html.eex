@@ -5,21 +5,18 @@
   <div class="km-img-wrapper center-block">
     <img class="img-responsive img-thumbnail" alt="<%= @dog.name %>" src="<%= @dog.photo %>">
   </div>
-  <div class="text-center">
-    <h4>Origin: <%= @dog.country_of_origin %></h4>
-    <h5>Approx. Year of Origin: <%= @dog.year_of_origin %></h5>
-  </div>
   <div>
     <div>
       <a href="<%= dog_path(@conn, :edit, @dog.id) %>" class="btn btn-default">Edit</a>
     </div>
-    <h2>Traits</h2>
     <ul>
       <li>Coat: <%= @dog.coat %></li>
       <li>Color: <%= @dog.color %></li>
       <li>Height: <%= @dog.height_in %></li>
       <li>Weight: <%= @dog.weight_lbs %></li>
       <li>Life Expectancy: <%= @dog.life_exp %></li>
+      <li>Country of Origin: <%= @dog.country_of_origin %></li>
+      <li>Year of Origin: <%= @dog.year_of_origin %></li>
     </ul>
   </div>
 </div>

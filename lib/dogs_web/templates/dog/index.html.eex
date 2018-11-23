@@ -1,6 +1,4 @@
-<div>
-  <h1>All of the Dogs</h1>
-
+<div class="km-margin-top">
   <div class="container">
     <%= for dog <- @dogs do %>
       <div class="col-sm-4">
