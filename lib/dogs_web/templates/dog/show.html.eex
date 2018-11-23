@@ -5,18 +5,47 @@
   <div class="km-img-wrapper center-block">
     <img class="img-responsive img-thumbnail" alt="<%= @dog.name %>" src="<%= @dog.photo %>">
   </div>
-  <div>
+  <div class="km-margin-top">
     <div>
       <a href="<%= dog_path(@conn, :edit, @dog.id) %>" class="btn btn-default">Edit</a>
     </div>
-    <ul>
-      <li>Coat: <%= @dog.coat %></li>
-      <li>Color: <%= @dog.color %></li>
-      <li>Height: <%= @dog.height_in %></li>
-      <li>Weight: <%= @dog.weight_lbs %></li>
-      <li>Life Expectancy: <%= @dog.life_exp %></li>
-      <li>Country of Origin: <%= @dog.country_of_origin %></li>
-      <li>Year of Origin: <%= @dog.year_of_origin %></li>
-    </ul>
+    <table>
+      <thead>
+        <tr>
+          <th>Attributes</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Coat</td>
+          <td><%= @dog.coat %></td>
+        </tr>
+        <tr>
+          <td>Color</td>
+          <td><%= @dog.color %></td>
+        </tr>
+        <tr>
+          <td>Height</td>
+          <td><%= @dog.height_in %></td>
+        </tr>
+        <tr>
+          <td>Weight</td>
+          <td><%= @dog.weight_lbs %></td>
+        </tr>
+        <tr>
+          <td>Life Expectancy</td>
+          <td><%= @dog.life_exp %></td>
+        </tr>
+        <tr>
+          <td>Country of Origin</td>
+          <td><%= @dog.country_of_origin %></td>
+        </tr>
+        <tr>
+          <td>Year of Origin</td>
+          <td><%= @dog.year_of_origin %></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
