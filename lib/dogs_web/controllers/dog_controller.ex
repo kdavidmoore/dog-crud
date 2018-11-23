@@ -22,7 +22,9 @@ defmodule DogsWeb.DogController do
   def create(conn, %{"dog" => dog}) do
     case Dogs.create_dog(dog) do
       {:ok, dog} ->
-        render(conn, "show.html", dog: dog)
+        conn
+        |> put_flash(:info, "Dog Created")
+        |> redirect(to: dog_path(conn, :index))
       {:error, changeset} ->
         render(conn, "new.html", changeset: changeset)
     end
@@ -41,7 +43,9 @@ defmodule DogsWeb.DogController do
 
     case Dogs.update_dog(dog, dog_params) do
       {:ok, dog} ->
-        render(conn, "show.html", dog: dog)
+        conn
+        |> put_flash(:info, "Dog Updated")
+        |> redirect(to: dog_path(conn, :index))
       {:error, changeset} ->
         render(conn, "edit.html", changeset: changeset)
     end

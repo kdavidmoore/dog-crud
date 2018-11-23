@@ -9,6 +9,7 @@
     <div>
       <a href="<%= dog_path(@conn, :edit, @dog.id) %>" class="btn btn-default">Edit</a>
     </div>
+
     <table>
       <thead>
         <tr>
