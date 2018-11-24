@@ -2,7 +2,6 @@ defmodule DogsWeb.DogController do
   use DogsWeb, :controller
 
   alias Dogs.Dog
-  alias Dogs.Repo
 
   def index(conn, _params) do
     dogs = Dogs.list_dogs()
@@ -55,7 +54,7 @@ defmodule DogsWeb.DogController do
   end
 
   def delete(conn, %{"id" => dog_id}) do
-    Repo.get!(Dog, dog_id) |> Repo.delete!
+    Dogs.delete_dog!(dog_id)
 
     conn
     |> put_flash(:info, "Dog Deleted")

@@ -55,19 +55,9 @@ defmodule Dogs do
   end
 
   @doc """
-  Deletes a Dog.
-
-  ## Examples
-
-      iex> delete_dog(dog)
-      {:ok, %Dog{}}
-
-      iex> delete_dog(dog)
-      {:error, %Ecto.Changeset{}}
-
+  (Bang) Deletes a Dog.
   """
-  def delete_dog(%Dog{} = dog) do
-    Repo.delete(dog)
+  def delete_dog!(dog_id) do
+    Repo.get!(Dog, dog_id) |> Repo.delete!
   end
-
 end
