@@ -22,7 +22,7 @@
 </div>
 
 <div class="fixed-action-btn">
-  <%= link to: dog_path(@conn, :new), class: "btn-floating btn-large waves-effect waves-light red" do %>
+  <%= link to: dog_path(@conn, :new), class: "btn-floating btn-large waves-effect waves-light" do %>
     <i class="material-icons">add</i>
   <% end %>
 </div>

@@ -6,7 +6,9 @@
     <img class="img-responsive img-thumbnail" alt="<%= @dog.name %>" src="<%= @dog.photo %>">
   </div>
   <div class="km-margin-top">
-    <%= link "Edit", to: dog_path(@conn, :edit, @dog.id), class: "btn btn-default" %>
+    <div class="right">
+      <%= link "Delete", to: dog_path(@conn, :delete, @dog), method: :delete, class: "btn waves-effect waves-light red" %>
+    </div>
 
     <table>
       <thead>
@@ -46,5 +48,11 @@
         </tr>
       </tbody>
     </table>
+  </div>
+
+  <div class="fixed-action-btn">
+    <%= link to: dog_path(@conn, :edit, @dog), class: "btn-floating btn-large waves-effect waves-light" do %>
+      <i class="material-icons">edit</i>
+    <% end %>
   </div>
 </div>

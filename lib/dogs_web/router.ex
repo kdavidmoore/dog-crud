@@ -16,8 +16,9 @@ defmodule DogsWeb.Router do
   scope "/", DogsWeb do
     pipe_through :browser # Use the default browser stack
 
-    get "/", DogController, :index
-    resources "/dogs", DogController
+    # get "/", DogController, :index
+    # resources "/dogs", DogController
+    resources "/", DogController
   end
 
   # Other scopes may use custom stacks.

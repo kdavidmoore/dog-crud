@@ -54,6 +54,6 @@
   </div>
 
   <div class="form-group">
-    <%= submit "Save", class: "btn btn-primary" %>
+    <%= submit "Save", class: "btn waves-effect waves-light" %>
   </div>
 <% end %>

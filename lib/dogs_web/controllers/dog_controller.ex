@@ -53,4 +53,11 @@ defmodule DogsWeb.DogController do
     end
   end
 
+  def delete(conn, %{"id" => dog_id}) do
+    Repo.get!(Topic, dog_id) |> Repo.delete!
+
+    conn
+    |> put_flash(:info, "Dog Deleted")
+    |> redirect(to: dog_path(conn, :index))
+  end
 end
