@@ -1,13 +1,16 @@
 <div>
   <div class="text-center">
-    <h1><%= @dog.name %></h1>
+    <h4><%= @dog.name %></h4>
   </div>
   <div class="km-img-wrapper center-block">
     <img class="img-responsive img-thumbnail" alt="<%= @dog.name %>" src="<%= @dog.photo %>">
   </div>
   <div class="km-margin-top">
     <div>
-      <a href="<%= dog_path(@conn, :edit, @dog.id) %>" class="btn btn-default">Edit</a>
+      <%= link to: dog_path(@conn, :edit, @dog.id), class: "btn btn-default" do %>
+        Edit
+      <% end %>
+      </a>
     </div>
 
     <table>

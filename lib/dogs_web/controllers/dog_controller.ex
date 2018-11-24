@@ -5,11 +5,13 @@ defmodule DogsWeb.DogController do
 
   def index(conn, _params) do
     dogs = Dogs.list_dogs()
+
     render(conn, "index.html", dogs: dogs)
   end
 
-  def show(conn, %{"id" => id}) do
-    dog = Dogs.get_dog(id)
+  def show(conn, %{"id" => dog_id}) do
+    dog = Dogs.get_dog(dog_id)
+
     render(conn, "show.html", dog: dog)
   end
 
@@ -21,7 +23,7 @@ defmodule DogsWeb.DogController do
 
   def create(conn, %{"dog" => dog}) do
     case Dogs.create_dog(dog) do
-      {:ok, dog} ->
+      {:ok, _dog} ->
         conn
         |> put_flash(:info, "Dog Created")
         |> redirect(to: dog_path(conn, :index))
@@ -30,19 +32,19 @@ defmodule DogsWeb.DogController do
     end
   end
 
-  def edit(conn, %{"id" => id}) do
-    dog = Dogs.get_dog(id)
+  def edit(conn, %{"id" => dog_id}) do
+    dog = Dogs.get_dog(dog_id)
 
     changeset = Dog.changeset(dog, %{})
 
-    render(conn, "edit.html", changeset: changeset, dog_id: id)
+    render(conn, "edit.html", changeset: changeset, dog: dog)
   end
 
-  def update(conn, %{"id" => id, "dog" => dog_params}) do
-    dog = Dogs.get_dog(id)
+  def update(conn, %{"id" => dog_id, "dog" => dog_params}) do
+    dog = Dogs.get_dog(dog_id)
 
     case Dogs.update_dog(dog, dog_params) do
-      {:ok, dog} ->
+      {:ok, _dog} ->
         conn
         |> put_flash(:info, "Dog Updated")
         |> redirect(to: dog_path(conn, :index))

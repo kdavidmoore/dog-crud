@@ -5,16 +5,15 @@
         <div class="col s12 m7">
           <div class="card">
             <div class="card-image">
-              <a href="<%= dog_path(@conn, :show, dog.id) %>">
+              <%= link to: dog_path(@conn, :show, dog.id) do %>
                 <img src="<%= dog.photo %>" />
+              <% end %>
               </a>
-              <span class="card-title">
-                <%= dog.name %>
-              </span>
             </div>
             <div class="card-action">
-              <a href="<%= dog_path(@conn, :show, dog.id) %>">
+              <%= link to: dog_path(@conn, :show, dog.id) do %>
                 <%= dog.name %>
+              <% end %>
               </a>
             </div>
           </div>
