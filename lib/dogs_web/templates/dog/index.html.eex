@@ -5,20 +5,24 @@
         <div class="col s12 m7">
           <div class="card">
             <div class="card-image">
-              <%= link to: dog_path(@conn, :show, dog.id) do %>
+              <%= link to: dog_path(@conn, :show, dog) do %>
                 <img src="<%= dog.photo %>" />
               <% end %>
-              </a>
             </div>
             <div class="card-action">
-              <%= link to: dog_path(@conn, :show, dog.id) do %>
+              <%= link to: dog_path(@conn, :show, dog) do %>
                 <%= dog.name %>
               <% end %>
-              </a>
             </div>
           </div>
         </div>
       </div>
     <% end %>
   </div>
+</div>
+
+<div class="fixed-action-btn">
+  <%= link to: dog_path(@conn, :new), class: "btn-floating btn-large waves-effect waves-light red" do %>
+    <i class="material-icons">add</i>
+  <% end %>
 </div>

@@ -49,7 +49,7 @@ defmodule DogsWeb.DogController do
         |> put_flash(:info, "Dog Updated")
         |> redirect(to: dog_path(conn, :index))
       {:error, changeset} ->
-        render(conn, "edit.html", changeset: changeset)
+        render(conn, "edit.html", changeset: changeset, dog: dog)
     end
   end
 
