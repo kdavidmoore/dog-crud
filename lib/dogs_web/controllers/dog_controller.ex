@@ -18,7 +18,7 @@ defmodule DogsWeb.DogController do
   def new(conn, _params) do
     changeset = Dog.changeset(%Dog{}, %{})
 
-    render conn, "new.html", changeset: changeset
+    render(conn, "new.html", changeset: changeset)
   end
 
   def create(conn, %{"dog" => dog}) do
